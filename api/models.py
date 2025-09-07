@@ -1,7 +1,8 @@
 """SQLAlchemy models."""
-from sqlalchemy import Column, Integer, String, ForeignKey, Float
-from sqlalchemy.orm import relationship
+
 from database import Base
+from sqlalchemy import Column, Float, ForeignKey, Integer, String
+from sqlalchemy.orm import relationship
 
 
 class Movie(Base):
@@ -13,7 +14,9 @@ class Movie(Base):
     # Relationships
     ratings = relationship("Rating", back_populates="movie", cascade="all, delete")
     tags = relationship("Tag", back_populates="movie", cascade="all, delete")
-    links = relationship("Link", back_populates="movie", cascade="all, delete", uselist=False)
+    links = relationship(
+        "Link", back_populates="movie", cascade="all, delete", uselist=False
+    )
 
 
 class Rating(Base):
@@ -36,6 +39,7 @@ class Tag(Base):
 
     # Relationships
     movie = relationship("Movie", back_populates="tags")
+
 
 class Link(Base):
     __tablename__ = "links"

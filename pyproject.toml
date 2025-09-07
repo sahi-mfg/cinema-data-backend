@@ -10,4 +10,5 @@ dependencies = [
     "ipykernel>=6.29.5",
     "pydantic>=2.11.7",
     "sqlalchemy>=2.0.41",
+    "uvicorn>=0.35.0",
 ]

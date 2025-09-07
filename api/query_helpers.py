@@ -1,6 +1,7 @@
 """SQLAlchemy query helper functions for my API."""
 
 from models import Link, Movie, Rating, Tag
+from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 
@@ -113,3 +114,12 @@ def get_tag_count(db: Session):
 def get_link_count(db: Session):
     """Get the total number of links."""
     return db.query(Link).count()
+
+
+def get_average_rating(db: Session):
+    """Get the average rating across all ratings."""
+    total_ratings = db.query(Rating).count()
+    if total_ratings == 0:
+        return 0.0
+    total_score = db.query(func.sum(Rating.rating)).scalar() or 0.0
+    return total_score / total_ratings
