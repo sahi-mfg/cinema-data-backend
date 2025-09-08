@@ -30,13 +30,13 @@ pip install httpx
 L'API est accessible à l'adresse suivante :
 
 ```
-http://localhost:8000
+https://cinema-data-backend.onrender.com
 ```
 
 L'interface Swagger est disponible ici :
 
 ```
-http://localhost:8000/docs
+https://cinema-data-backend.onrender.com/docs
 ```
 
 ---
@@ -65,7 +65,7 @@ http://localhost:8000/docs
 ```python
 import httpx
 
-response = httpx.get("http://localhost:8000/movies", params={"limit": 5})
+response = httpx.get("https://cinema-data-backend.onrender.com/movies", params={"limit": 5})
 print(response.json())
 ```
 
@@ -73,28 +73,28 @@ print(response.json())
 
 ```python
 movie_id = 1
-response = httpx.get(f"http://localhost:8000/movies/{movie_id}")
+response = httpx.get(f"https://cinema-data-backend.onrender.com/movies/{movie_id}")
 print(response.json())
 ```
 
 ### Rechercher les évaluations pour un film donné
 
 ```python
-response = httpx.get("http://localhost:8000/ratings", params={"movie_id": 1})
+response = httpx.get("https://cinema-data-backend.onrender.com/ratings", params={"movie_id": 1})
 print(response.json())
 ```
 
 ### Récupérer un tag spécifique
 
 ```python
-response = httpx.get("http://localhost:8000/tags/5/1/superbe")
+response = httpx.get("https://cinema-data-backend.onrender.com/tags/5/1/superbe")
 print(response.json())
 ```
 
 ### Obtenir des statistiques globales
 
 ```python
-response = httpx.get("http://localhost:8000/analytics")
+response = httpx.get("https://cinema-data-backend.onrender.com/analytics")
 print(response.json())
 ```
 
@@ -121,7 +121,7 @@ Les contributions sont les bienvenues !
 
 ## Ressources utiles
 
-- Swagger UI : [http://localhost:8000/docs](http://localhost:8000/docs)
+- Swagger UI : [https://cinema-data-backend.onrender.com/docs](https://cinema-data-backend.onrender.com/docs)
 - Documentation technique : disponible via Swagger
 - Base de données MovieLens : [https://grouplens.org/datasets/movielens/](https://grouplens.org/datasets/movielens/)
 
@@ -135,7 +135,7 @@ Les contributions sont les bienvenues !
 
 ## URL publique (Cloud) de l'API
 
-*A venir*
+[Ici](https://cinema-data-backend.onrender.com)
 
 ## Auteur
 
