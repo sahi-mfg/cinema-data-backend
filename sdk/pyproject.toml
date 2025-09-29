@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=80.9.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cinema_data_sdk"
+version = "0.1.0"
+authors = [{ name = "Sahi", email = "mohamedfrancissahi@gmail.com" }]
+description = "SDK pour interagir avec l'API Cinema Data Backend"
+requires-python = ">=3.12"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Programming Language :: Python :: 3.12",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "httpx>=0.28.1",
+    "pydantic>=2.11.7",
+    "numpy>=2.3.2",
+    "pandas>=2.3.2",
+    "python-dotenv",
+    "backoff",
+
+]
